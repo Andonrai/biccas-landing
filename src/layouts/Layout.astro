@@ -1,10 +1,12 @@
 ---
 import "@fontsource-variable/inter";
 import "../styles/global.css";
+
+import Navbar from "../components/Navbar.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -13,6 +15,7 @@ import "../styles/global.css";
     <title>Astro Basics</title>
   </head>
   <body class="min-h-dvh grid grid-rows-[auto_1fr_auto]">
+    <Navbar />
     <slot />
   </body>
 </html>
