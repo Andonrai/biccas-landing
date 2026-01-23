@@ -6,35 +6,35 @@ interface NavLink {
 const navbarLinks: NavLink[] = [
   {
     name: "Home",
-    url: "#home",
+    url: "home",
   },
   {
     name: "Product",
-    url: "#product",
+    url: "product",
   },
   {
     name: "FAQ",
-    url: "#faq",
+    url: "faq",
   },
   {
     name: "Blog",
-    url: "#blog",
+    url: "blog",
   },
   {
     name: "About Us",
-    url: "#about-us",
+    url: "about-us",
   },
 ];
 ---
 
-<header id="navbar" class="flex items-center justify-between py-10 px-32">
+<header id="navbar" class="flex items-center justify-between h-[10dvh] px-32">
   <h1 class="text-[#54BD95] font-semibold text-5xl">Biccas</h1>
   <nav>
     <ul class="flex items-center gap-x-10">
       {
         navbarLinks.map((link) => (
-          <li class="nav-link font-medium text-lg">
-            <a href={link.url}>{link.name}</a>
+          <li id={link.url} class="nav-link font-medium text-lg">
+            <a href={"#" + link.url}>{link.name}</a>
           </li>
         ))
       }
@@ -72,11 +72,10 @@ const navbarLinks: NavLink[] = [
     }
 
     navLinks.forEach((link) => {
-      // A. Primero reseteamos TODOS los links a estado "inactivo" (gris)
       link.classList.remove("text-black");
       link.classList.add("text-[#A6A6A6]");
 
-      if (link.dataset.section === current) {
+      if (link.id === current) {
         link.classList.remove("text-[#A6A6A6]");
         link.classList.add("text-black");
       }
