@@ -1,7 +1,6 @@
 ---
 import "@fontsource-variable/inter";
 import "../styles/global.css";
-
 import Navbar from "../components/Navbar.astro";
 ---
 
@@ -14,7 +13,7 @@ import Navbar from "../components/Navbar.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
   </head>
-  <body class="min-h-dvh grid grid-rows-[auto_1fr_auto]">
+  <body class="min-h-dvh grid grid-rows-[auto_1fr_auto] overflow-x-hidden">
     <Navbar />
     <slot />
   </body>
