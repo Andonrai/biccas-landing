@@ -1,0 +1,33 @@
+---
+interface Brand {
+  name: string;
+  logo: string;
+}
+const brands: Brand[] = [
+  { name: "Unsplash", logo: "/logos/unsplash.svg" },
+  { name: "Descript", logo: "/logos/descript.svg" },
+  { name: "Grammarly", logo: "/logos/grammarly.svg" },
+  { name: "Intercom", logo: "/logos/intercom.svg" },
+  { name: "Notion", logo: "/logos/notion.svg" },
+];
+---
+
+<div
+  class="h-[20dvh] w-full flex flex-col items-center justify-center gap-y-15"
+>
+  <h1 class="font-bold text-[#191A15] text-[40px]">
+    More than 25,000 teams use Collabs
+  </h1>
+  <ul class="flex gap-x-12.5">
+    {
+      brands.map((brand) => (
+        <img
+          src={brand.logo}
+          alt={`${brand.name} logo`}
+          class="h-8 w-auto object-contain"
+          loading="lazy"
+        />
+      ))
+    }
+  </ul>
+</div>
