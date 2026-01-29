@@ -1,0 +1,23 @@
+---
+interface Props {
+  size?: number | string | undefined;
+  fill?: string;
+}
+
+const { size = 30, fill = "#BBBBBB" } = Astro.props;
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 30 30"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M27.5 15H22.5L18.75 26.25L11.25 3.75L7.5 15H2.5"
+    stroke={fill}
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+</svg>
